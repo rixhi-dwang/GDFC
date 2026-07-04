@@ -126,6 +126,16 @@ body {
     text-shadow: 0 0 5px var(--color-green-glow);
 }
 
+.system-status.anomaly {
+    color: var(--color-orange);
+    text-shadow: 0 0 5px var(--color-orange-glow);
+}
+
+.system-status.anomaly .pulse-dot {
+    background-color: var(--color-orange);
+    animation: pulse-orange 1s infinite ease-in-out;
+}
+
 .pulse-dot {
     width: 6px;
     height: 6px;

@@ -392,7 +392,31 @@ function calculateFlightPath(e) {
         document.querySelector('.reactor-fill').style.width = `${Math.min(100, Math.max(15, Math.floor(Math.abs(inputs[16] * 0.8))))}%`;
         document.querySelector('.plasma-fill').style.width = `${Math.min(100, Math.max(5, Math.floor(Math.abs(inputs[5] * 2))))}%`;
         
-        logToTerminal("SUCCESS: HYPERSPACE MATRIX STABILIZED. PLOT COMPLETED.", "green");
+        // Determine anomaly status based on computed values
+        const avgTemp = dataPoints2.reduce((sum, val) => sum + val, 0) / dataPoints2.length;
+        const maxTrajectory = Math.max(...dataPoints1);
+        const hasAnomaly = avgTemp > 300 || maxTrajectory > 120 || inputs[16] > 600 || inputs[0] < -20;
+        
+        const statusElement = document.querySelector('.system-status');
+        if (hasAnomaly) {
+            statusElement.innerHTML = '<span class="pulse-dot"></span>SYS STATUS: ANOMALY DETECTED';
+            statusElement.classList.add('anomaly');
+            
+            // Set widgets to flashing warnings
+            document.getElementById('hud-velocity').style.color = 'var(--color-orange)';
+            document.getElementById('hud-altitude').style.color = 'var(--color-orange)';
+            
+            logToTerminal("WARNING: CRITICAL DIVERGENCE DETECTED. REACTOR CORE ENGINE FLUX STABILITY LOST!", "orange");
+        } else {
+            statusElement.innerHTML = '<span class="pulse-dot"></span>SYS STATUS: NOMINAL / STABLE';
+            statusElement.classList.remove('anomaly');
+            
+            // Restore normal widget color
+            document.getElementById('hud-velocity').style.color = '';
+            document.getElementById('hud-altitude').style.color = '';
+            
+            logToTerminal("SUCCESS: HYPERSPACE MATRIX STABILIZED. FLIGHT NOMINAL.", "green");
+        }
     }, 2000);
 }
 
