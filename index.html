@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,14 @@
     <!-- Sci-fi Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
     <!-- ChartJS for Telemetry Graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css?v=3">
 </head>
+
 <body>
     <!-- Glowing Anomaly Alert Overlay -->
     <div id="anomaly-alert-overlay">
@@ -25,10 +29,13 @@
             <div class="flight-loader-symbol">
                 <svg viewBox="0 0 100 100" class="flight-svg">
                     <!-- Futuristic fighter jet wireframe outline -->
-                    <path d="M 50 8 L 54 35 L 88 65 L 54 58 L 50 92 L 46 58 L 12 65 L 46 35 Z" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linejoin="round" class="jet-path" />
+                    <path d="M 50 8 L 54 35 L 88 65 L 54 58 L 50 92 L 46 58 L 12 65 L 46 35 Z" fill="none"
+                        stroke="#00f0ff" stroke-width="2" stroke-linejoin="round" class="jet-path" />
                     <!-- Orbital scanner ring -->
-                    <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1" stroke-dasharray="10 5" />
-                    <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255, 91, 0, 0.4)" stroke-dasharray="5 15" class="reverse-spin" />
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="1"
+                        stroke-dasharray="10 5" />
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255, 91, 0, 0.4)" stroke-dasharray="5 15"
+                        class="reverse-spin" />
                 </svg>
             </div>
             <div class="loader-text-panel">
@@ -86,7 +93,7 @@
                     <h2><span class="arrow">>></span> AVIONICS HUD & RADAR</h2>
                     <span class="panel-sub">LIVE TELEMETRY SWEEP</span>
                 </div>
-                
+
                 <div class="panel-content avionics-content">
                     <!-- Attitude Indicator (Flight Horizon) -->
                     <div class="gyro-widget">
@@ -107,20 +114,26 @@
                         <div class="radar-blips" id="radar-blips"></div>
                         <div class="gyro-label">DEBRIS LIDAR SCANNER</div>
                     </div>
-                    
+
                     <!-- Engine Thrust & Core Bars -->
                     <div class="engine-meters">
                         <div class="engine-bar-wrapper">
                             <span class="bar-name">ION COMPRESSION</span>
-                            <div class="bar-track"><div class="bar-fill thrust-fill" style="width: 82%"></div></div>
+                            <div class="bar-track">
+                                <div class="bar-fill thrust-fill" style="width: 82%"></div>
+                            </div>
                         </div>
                         <div class="engine-bar-wrapper">
                             <span class="bar-name">REACTOR COHERENCE</span>
-                            <div class="bar-track"><div class="bar-fill reactor-fill" style="width: 94%"></div></div>
+                            <div class="bar-track">
+                                <div class="bar-fill reactor-fill" style="width: 94%"></div>
+                            </div>
                         </div>
                         <div class="engine-bar-wrapper">
                             <span class="bar-name">PLASMA EXPANSION</span>
-                            <div class="bar-track"><div class="bar-fill plasma-fill" style="width: 71%"></div></div>
+                            <div class="bar-track">
+                                <div class="bar-fill plasma-fill" style="width: 71%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,13 +202,15 @@
                 <div class="panel-content terminal-content" id="terminal-log">
                     <div class="log-line text-cyan">[00:00:00] GDFC BOOT LOADER INITIALIZED...</div>
                     <div class="log-line text-cyan">[00:00:01] DEBRIS SCANNER ONLINE. READY FOR LAUNCH DIRECTION.</div>
-                    <div class="log-line text-orange">[00:00:02] WARNING: CORE RE-ENTRY COEFFICIENTS STANDING BY. FILL SAMPLE DATA TO COMPUTE FLIGHT VECTOR.</div>
+                    <div class="log-line text-orange">[00:00:02] WARNING: CORE RE-ENTRY COEFFICIENTS STANDING BY. FILL
+                        SAMPLE DATA TO COMPUTE FLIGHT VECTOR.</div>
                 </div>
             </section>
         </footer>
     </div>
 
     <!-- Core Script -->
-    <script src="app.js?v=3"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
