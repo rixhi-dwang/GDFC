@@ -142,104 +142,19 @@
 
                 <div class="panel-content diagnostics-content">
                     <form id="diagnostics-form">
-                        <!-- Input Grid: 17 inputs, 3 per row -->
-                        <div class="inputs-grid" id="inputs-grid">
-                            <!-- Statically write 17 inputs for reliability -->
-                            <div class="input-card">
-                                <label for="feat-1">FEATURE 1 <span class="hex-tag">[F-01]</span></label>
-                                <input type="number" step="any" id="feat-1" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-2">FEATURE 2 <span class="hex-tag">[F-02]</span></label>
-                                <input type="number" step="any" id="feat-2" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-3">FEATURE 3 <span class="hex-tag">[F-03]</span></label>
-                                <input type="number" step="any" id="feat-3" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-4">FEATURE 4 <span class="hex-tag">[F-04]</span></label>
-                                <input type="number" step="any" id="feat-4" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-5">FEATURE 5 <span class="hex-tag">[F-05]</span></label>
-                                <input type="number" step="any" id="feat-5" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-6">FEATURE 6 <span class="hex-tag">[F-06]</span></label>
-                                <input type="number" step="any" id="feat-6" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-7">FEATURE 7 <span class="hex-tag">[F-07]</span></label>
-                                <input type="number" step="any" id="feat-7" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-8">FEATURE 8 <span class="hex-tag">[F-08]</span></label>
-                                <input type="number" step="any" id="feat-8" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-9">FEATURE 9 <span class="hex-tag">[F-09]</span></label>
-                                <input type="number" step="any" id="feat-9" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-10">FEATURE 10 <span class="hex-tag">[F-10]</span></label>
-                                <input type="number" step="any" id="feat-10" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-11">FEATURE 11 <span class="hex-tag">[F-11]</span></label>
-                                <input type="number" step="any" id="feat-11" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-12">FEATURE 12 <span class="hex-tag">[F-12]</span></label>
-                                <input type="number" step="any" id="feat-12" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-13">FEATURE 13 <span class="hex-tag">[F-13]</span></label>
-                                <input type="number" step="any" id="feat-13" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-14">FEATURE 14 <span class="hex-tag">[F-14]</span></label>
-                                <input type="number" step="any" id="feat-14" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-15">FEATURE 15 <span class="hex-tag">[F-15]</span></label>
-                                <input type="number" step="any" id="feat-15" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-16">FEATURE 16 <span class="hex-tag">[F-16]</span></label>
-                                <input type="number" step="any" id="feat-16" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <div class="input-card">
-                                <label for="feat-17">FEATURE 17 <span class="hex-tag">[F-17]</span></label>
-                                <input type="number" step="any" id="feat-17" placeholder="0.00" required>
-                                <span class="input-glow"></span>
-                            </div>
-                            <!-- Spacing filler to make the grid tidy -->
+                        <div class="inputs-grid" id="inputs-grid" aria-live="polite">
                             <div class="input-card info-card">
                                 <div class="info-pulse"></div>
-                                <span class="info-lbl">GDFC TELEMETRY REACTOR</span>
-                                <span class="info-status">READY FOR VECTOR CALCS</span>
+                                <span class="info-lbl">LOADING MODEL SCHEMA</span>
+                                <span class="info-status">REQUESTING FEATURE CONTRACT</span>
                             </div>
                         </div>
 
                         <!-- Action trigger to simulate flight path & render graph -->
                         <div class="diagnostics-actions">
+                            <div id="prediction-result" class="prediction-result" role="status" aria-live="polite">
+                                Awaiting model schema.
+                            </div>
                             <button type="submit" id="btn-submit" class="hud-btn submit-btn">
                                 <span class="btn-scanlines"></span>
                                 <span class="btn-text">⚡ INITIATE FLIGHT PATH CALCULATION</span>
